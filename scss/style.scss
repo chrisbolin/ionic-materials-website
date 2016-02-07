@@ -1,0 +1,212 @@
+$header-color: #F2F4F7;
+$text-color: #444;
+$shadow-color: #333;
+$brand-color: #0671B9;
+
+$page-width: 760px;
+$headline-width: 540px;
+$body-width: 600px;
+$index-body-width: 460px;
+$header-height: 90px;
+$logo-height: 42px;
+$mobile-width: 480px;
+
+$size-0: 10px;
+$size-05: 13px;
+$size-1: 14px;
+$size-2: 21px;
+$size-3: 32px;
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: $text-color;
+  font-size: $size-1;
+  
+  background: url(https://dl.dropboxusercontent.com/s/7ofhm16jgsny3mx/background-gradient.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+  
+
+p, li {
+  line-height: 1.7;
+}
+
+a {
+  cursor: pointer;
+}
+
+.content {
+  padding: 0 15px;
+  .headline {
+    max-width: $headline-width;
+    margin: 50px auto 30px;   
+    font-size: $size-3;
+    line-height: 1.4;
+    font-weight: 700;
+    text-align: center;    
+    @media only screen and (max-width: $mobile-width){
+      font-size: $size-2;
+    }
+  }
+  .body {  
+    max-width: $body-width;
+    margin: 0 auto;
+    &.index {
+      text-align: center;
+      max-width: $index-body-width;
+    }
+  }
+  li {
+    text-align: left;
+    margin-left: 10px;
+  }
+  a {
+    color: $brand-color;
+    transition: all 0.3s ease-out;    
+    &:hover {
+      background-color: $brand-color;
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.header-spacer {
+  height: $header-height;
+}
+
+#header {
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  line-height: $header-height;
+  transition: all ease-out 0.5s;  
+
+  &.sticky {
+    background-color: $header-color;
+    box-shadow: 0 0 3px $shadow-color;
+  }
+  
+  .header-content {
+    max-width: $page-width;
+    margin: 0 auto;
+    vertical-align: middle;
+    height: 100%;
+    padding: 0 10px;
+  }
+  .logo {  
+     height: $logo-height;
+     vertical-align: middle;   
+  }
+  .menu {
+    float: right;
+  }
+  a {
+    color: $text-color;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    font-size: $size-05;
+    transition: all ease-out 0.3s;
+    border-bottom: 0px solid $brand-color;
+    &:hover {
+      background-color: rgba(0,0,0,0.03);
+      color: black;
+      border-bottom-width: 5px;
+    }
+  }  
+}
+
+.hide {
+  display: none !important;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: $size-0;
+  margin: 100px 0 10px;
+  @media only screen and (max-width: $mobile-width) {
+    position: inherit;
+  }
+}
+
+.mobile {
+  display: none !important;
+}
+
+@media only screen and (max-width: $mobile-width) {
+  .mobile {
+    display: inherit !important;
+  }
+  .desktop {
+    display: none !important;
+  }  
+}
+
+#mobile-menu {
+  z-index: 10;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  padding-top: 70px;
+  background-color: rgba(0,0,0,0.88);
+  text-align: center;
+  transition: top ease-out 0.1s;
+  a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: $size-2;
+    padding: 10px 0;
+    &:active, &:hover {
+      font-weight: 700;
+    }
+  }
+  #close-mobile-menu {
+    font-size: 80px;
+    position: absolute;
+    padding: 25px;
+    right: -2px;
+    top: -40px;
+  }
+  &.show {
+    top: 0%;
+  }
+  &.hide {
+    top: 100%;
+  }  
+}
+
+#open-mobile-menu {
+  text-decoration: none;
+  font-size: 40px;
+  right: 0px;
+  top: -8px;
+  padding: 20px;
+  position: fixed;
+  color: $text-color;
+}
+
+section {
+  animation: 0.5s enter;
+}
+
+@keyframes enter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
