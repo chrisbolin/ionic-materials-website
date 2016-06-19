@@ -49,11 +49,11 @@ a {
   color: #0671B9;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  text-decoration: none;
 }
 .content a:hover {
   background-color: #0671B9;
   color: white;
-  text-decoration: none;
 }
 
 .header-spacer {
@@ -95,14 +95,18 @@ a {
   font-weight: 700;
   letter-spacing: 0.7px;
   font-size: 13px;
-  -webkit-transition: all ease-out 0.3s;
-  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.15s;
+  transition: all ease-out 0.15s;
   border-bottom: 0px solid #0671B9;
 }
 #header a:hover {
   background-color: rgba(0, 0, 0, 0.03);
   color: black;
   border-bottom-width: 5px;
+}
+#header a:hover .logo {
+  -webkit-filter: saturate(0%) contrast(0%) brightness(40%);
+          filter: saturate(0%) contrast(0%) brightness(40%);
 }
 
 .hide {
@@ -180,27 +184,4 @@ a {
   padding: 20px;
   position: fixed;
   color: #444;
-}
-
-section {
-  -webkit-animation: 0.5s enter;
-          animation: 0.5s enter;
-}
-
-@-webkit-keyframes enter {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes enter {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
