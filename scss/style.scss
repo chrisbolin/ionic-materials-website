@@ -44,16 +44,16 @@ a {
   padding: 0 15px;
   .headline {
     max-width: $headline-width;
-    margin: 50px auto 30px;
+    margin: 50px auto 30px;   
     font-size: $size-3;
     line-height: 1.4;
     font-weight: 700;
-    text-align: center;
+    text-align: center;    
     @media only screen and (max-width: $mobile-width){
       font-size: $size-2;
     }
   }
-  .body {
+  .body {  
     max-width: $body-width;
     margin: 0 auto;
     &.index {
@@ -68,7 +68,7 @@ a {
   a {
     color: $brand-color;
     transition: all 0.3s ease-out;
-    text-decoration: none;
+    text-decoration: none;   
     &:hover {
       background-color: $brand-color;
       color: white;
@@ -85,13 +85,13 @@ a {
   width: 100%;
   height: $header-height;
   line-height: $header-height;
-  transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;  
 
   &.sticky {
     background-color: $header-color;
     box-shadow: 0 0 3px $shadow-color;
   }
-
+  
   .header-content {
     max-width: $page-width;
     margin: 0 auto;
@@ -99,7 +99,7 @@ a {
     height: 100%;
     padding: 0 10px;
   }
-  .logo {
+  .logo {  
     height: $logo-height;
     vertical-align: middle;
   }
@@ -118,14 +118,17 @@ a {
     transition: all ease-out 0.15s;
     border-bottom: 0px solid $brand-color;
     &:hover {
-      background-color: rgba(0,0,0,0.03);
-      color: black;
-      border-bottom-width: 5px;
-      .logo{
-        filter: saturate(0%) contrast(0%) brightness(40%);
+      // only hover on desktop      
+      @media only screen and (min-width: $mobile-width){      
+        background-color: rgba(0,0,0,0.03);
+        color: black;
+        border-bottom-width: 5px;
+        .logo{
+          filter: saturate(0%) contrast(0%) brightness(40%); 
+        }
       }
     }
-  }
+  }  
 }
 
 .hide {
@@ -154,7 +157,7 @@ a {
   }
   .desktop {
     display: none !important;
-  }
+  }  
 }
 
 #mobile-menu {
@@ -189,7 +192,7 @@ a {
   }
   &.hide {
     top: 100%;
-  }
+  }  
 }
 
 #open-mobile-menu {
