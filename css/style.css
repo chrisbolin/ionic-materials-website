@@ -84,9 +84,10 @@ a {
 #header .logo {
   height: 42px;
   vertical-align: middle;
+  display: inline-block;
 }
 #header .menu {
-  float: right;
+  display: inline-block;
 }
 #header a {
   color: #444;
