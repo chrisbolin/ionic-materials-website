@@ -18,3 +18,16 @@ $('#close-mobile-menu')
   .click(function(){
     mobileMenu.className = 'hide';
   });
+
+$('#mobile-menu')
+  .click(function(event){
+    if (event.target === event.currentTarget) {
+      mobileMenu.className = 'hide';
+    }
+  });
+
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) { // escape
+    mobileMenu.className = 'hide';
+  }
+});
